@@ -35,6 +35,11 @@ namespace ProductReviewManagementWithLinq
             productTable.Rows.Add(14, 14, 3, "Good", true);
             productTable.Rows.Add(15, 15, 5, "Good", true);
             productTable.Rows.Add(16, 16, 2, "bad",  true);
+            productTable.Rows.Add(10, 12, 9, "Good", true);
+            productTable.Rows.Add(10, 1, 3, "Nice", true);
+            productTable.Rows.Add(10, 14, 3, "Good", true);
+            productTable.Rows.Add(10, 15, 5, "Good", true);
+            productTable.Rows.Add(10, 16, 2, "bad", true);
 
             return productTable;
         }

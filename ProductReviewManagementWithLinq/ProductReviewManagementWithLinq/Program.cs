@@ -78,7 +78,8 @@ namespace ProductReviewManagementWithLinq
             }*/
             //management.retriveRecordsWhohaveLikeValueTrue(dataTable);
             //management.calAverageRatingOfEachProductID(dataTable);
-            management.RetrievRecordsReviewIsNice(dataTable);
+            //management.RetrievRecordsReviewIsNice(dataTable);
+            management.RetrievPerticularUserIDRecords(dataTable);
         }
     }
 }

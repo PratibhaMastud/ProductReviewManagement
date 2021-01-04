@@ -110,5 +110,17 @@ namespace ProductReviewManagementWithLinq
                 Console.WriteLine("\n");
             }
         }
+
+        public void RetrievPerticularUserIDRecords(DataTable table)
+        {
+            var records = table.Rows.Cast<DataRow>()
+                          .OrderBy(x => x.Field<int>("Rating"))
+                          .Where(x => x["ProductId"].Equals(10));
+            foreach (var row in records)
+            {
+                Console.Write("ProductID : " + row.Field<int>("ProductId") + " " + "UserID : " + row.Field<int>("UserID") + " " + "Rating : " + row.Field<int>("Rating") + " " + "Review : " + row.Field<string>("Review") + " " + "isLike : " + row.Field<bool>("isLike"));
+                Console.WriteLine("\n");
+            }
+        }
     }
 }
