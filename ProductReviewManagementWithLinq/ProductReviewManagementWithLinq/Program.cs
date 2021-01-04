@@ -46,18 +46,33 @@ namespace ProductReviewManagementWithLinq
 
             ProductReviewDataTable productReviewDataTable = new ProductReviewDataTable();
             DataTable data = productReviewDataTable.CreateDataTableAddDefaultValues();
+            /*
+                        Retrive All records
+                        foreach (DataRow row in data.Rows)
+                        {
+                            Console.Write("-->");
+                            foreach (var item in row.ItemArray)
+                            { 
+                                Console.Write(" "+item);
+                            }
+                            Console.Write("\n ");
+                        }*/
 
-            // iterate all rows.
-            /*foreach (DataRow row in data.Rows)
+            /*// iterate all rows.
+            foreach (DataRow row in data.Rows)
             {
                 Console.WriteLine(row.Field<int>(0), row.Field<int>(1), row.Field<int>(2), row.Field<string>(3), row.Field<bool>(4));
             }*/
+
             foreach (DataRow row in data.Rows)
             {
-                Console.Write("-->");
                 foreach (var item in row.ItemArray)
-                { 
-                    Console.Write(" "+item);
+                {
+                    bool islike = row.Field<bool>(4);
+                    if (islike == true)
+                    {
+                        Console.Write(" " + item);
+                    }
                 }
                 Console.Write("\n ");
             }
