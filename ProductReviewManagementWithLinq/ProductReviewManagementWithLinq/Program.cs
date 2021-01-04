@@ -40,7 +40,8 @@ namespace ProductReviewManagementWithLinq
             //management.TopRecords(productReviewList);
             // management.RetriveRecordsOnSpecificCon(productReviewList);
             //management.CountOfRecordsByProductID(productReviewList);
-            management.RetrieveProductIDAndReview(productReviewList);
+            //management.RetrieveProductIDAndReview(productReviewList);
+            management.skippedTopFiveRecords(productReviewList);
         }
     }
 }

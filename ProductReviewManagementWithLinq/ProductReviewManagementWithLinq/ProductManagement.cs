@@ -57,5 +57,12 @@ namespace ProductReviewManagementWithLinq
                 Console.WriteLine("ProductID : " + records.ProductID + "\tProduct Review : " + records.ProductReview);
             }
         }
+
+        public void skippedTopFiveRecords(List<ProductReview> listProductReview)
+        {
+            var recordData = (from productReviews in listProductReview
+                              select productReviews).Skip(5).ToList();
+            DisplayRecords(recordData);
+        }
     }
 }
