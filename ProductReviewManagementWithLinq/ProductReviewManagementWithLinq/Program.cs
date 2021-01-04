@@ -76,8 +76,9 @@ namespace ProductReviewManagementWithLinq
                 }
                 Console.Write("\n ");
             }*/
-           management.retriveRecordsWhohaveLikeValueTrue(dataTable);
-            management.calAverageRatingOfEachProductID(dataTable);
+            //management.retriveRecordsWhohaveLikeValueTrue(dataTable);
+            //management.calAverageRatingOfEachProductID(dataTable);
+            management.RetrievRecordsReviewIsNice(dataTable);
         }
     }
 }

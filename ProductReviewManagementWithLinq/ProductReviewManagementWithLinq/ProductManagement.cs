@@ -98,5 +98,17 @@ namespace ProductReviewManagementWithLinq
                 Console.WriteLine("\n");
             }
         }
+
+        public void RetrievRecordsReviewIsNice(DataTable table)
+        {
+            var records = table.Rows.Cast<DataRow>()
+                          .Where(x => x["Review"].Equals("Nice"));
+
+            foreach (var row in records)
+            {
+                Console.Write("ProductID : " + row.Field<int>("ProductId") + " " + "UserID : " + row.Field<int>("UserID") + " " + "Rating : " + row.Field<int>("Rating") + " " + "Review : " + row.Field<string>("Review") + " " + "isLike : " + row.Field<bool>("isLike"));
+                Console.WriteLine("\n");
+            }
+        }
     }
 }
