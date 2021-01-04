@@ -18,7 +18,7 @@ namespace ProductReviewManagementWithLinq
             set;
         }
 
-        public double Rating
+        public int Rating
         {
             get;
             set;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace ProductReviewManagementWithLinq
 {
@@ -37,11 +38,29 @@ namespace ProductReviewManagementWithLinq
              }*/
 
             ProductManagement management = new ProductManagement();
-            //management.TopRecords(productReviewList);
+            //management.TopRecords(productReviewList); 
             // management.RetriveRecordsOnSpecificCon(productReviewList);
             //management.CountOfRecordsByProductID(productReviewList);
             //management.RetrieveProductIDAndReview(productReviewList);
-            management.skippedTopFiveRecords(productReviewList);
+            // management.skippedTopFiveRecords(productReviewList);
+
+            ProductReviewDataTable productReviewDataTable = new ProductReviewDataTable();
+            DataTable data = productReviewDataTable.CreateDataTableAddDefaultValues();
+
+            // iterate all rows.
+            /*foreach (DataRow row in data.Rows)
+            {
+                Console.WriteLine(row.Field<int>(0), row.Field<int>(1), row.Field<int>(2), row.Field<string>(3), row.Field<bool>(4));
+            }*/
+            foreach (DataRow row in data.Rows)
+            {
+                Console.Write("-->");
+                foreach (var item in row.ItemArray)
+                { 
+                    Console.Write(" "+item);
+                }
+                Console.Write("\n ");
+            }
         }
     }
 }
