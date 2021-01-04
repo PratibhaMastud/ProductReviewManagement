@@ -18,13 +18,13 @@ namespace ProductReviewManagementWithLinq
                 new ProductReview(){ ProductId = 4,UserId = 4, Rating = 5, Review = "Good", isLike = true },
                 new ProductReview(){ ProductId = 5,UserId = 5, Rating = 4, Review = "Good", isLike = true },
                 new ProductReview(){ ProductId = 6,UserId = 6, Rating = 3, Review = "Nice", isLike = true },
-                new ProductReview(){ ProductId = 7,UserId = 7, Rating = 8, Review = "Good", isLike = true },
+                new ProductReview(){ ProductId = 9,UserId = 9, Rating = 8, Review = "Good", isLike = true },
                 new ProductReview(){ ProductId = 8,UserId = 8, Rating = 3, Review = "Good", isLike = true },
                 new ProductReview(){ ProductId = 9,UserId = 9, Rating = 3, Review = "Nice", isLike = true },
-                new ProductReview(){ ProductId = 10,UserId = 10, Rating = 4, Review = "Good", isLike = true },
+                new ProductReview(){ ProductId = 4,UserId = 4, Rating = 4, Review = "Good", isLike = true },
                 new ProductReview(){ ProductId = 11,UserId = 11, Rating = 4, Review = "Good", isLike = true },
                 new ProductReview(){ ProductId = 12,UserId = 12, Rating = 9, Review = "Good", isLike = true },
-                new ProductReview(){ ProductId = 13,UserId = 13, Rating = 3, Review = "Nice", isLike = true },
+                new ProductReview(){ ProductId = 1,UserId = 1, Rating = 3, Review = "Nice", isLike = true },
                 new ProductReview(){ ProductId = 14,UserId = 14, Rating = 3, Review = "Good", isLike = true },
                 new ProductReview(){ ProductId = 15,UserId = 15, Rating = 5, Review = "Good", isLike = true },
                 new ProductReview(){ ProductId = 16,UserId = 16, Rating = 2, Review = "bad", isLike = true }
@@ -37,7 +37,8 @@ namespace ProductReviewManagementWithLinq
              }*/
 
             ProductManagement management = new ProductManagement();
-            management.TopRecords(productReviewList);
+            //management.TopRecords(productReviewList);
+            management.RetriveRecordsOnSpecificCon(productReviewList);
         }
     }
 }
