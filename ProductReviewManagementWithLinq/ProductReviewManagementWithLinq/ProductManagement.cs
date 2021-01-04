@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ProductReviewManagementWithLinq
 {
-    public class Management
+    public class ProductManagement
     {
         public readonly DataTable dataTable = new DataTable();
 
@@ -16,9 +16,9 @@ namespace ProductReviewManagementWithLinq
                               orderby productReviews.Rating descending
                               select productReviews).Take(3).ToList();
 
-            Display ((List<ProductReview>) recordData);
+            Display((List<ProductReview>)recordData);
         }
-        
+
         public void Display(List<ProductReview> records)
         {
             foreach (var list in records)

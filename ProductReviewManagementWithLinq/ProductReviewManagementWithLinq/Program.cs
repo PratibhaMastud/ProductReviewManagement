@@ -30,11 +30,14 @@ namespace ProductReviewManagementWithLinq
                 new ProductReview(){ ProductId = 16,UserId = 16, Rating = 2, Review = "bad", isLike = true }
             };
 
-            foreach (var list in productReviewList)
-            {
-                Console.WriteLine("\n-----------------");
-                Console.Write("\nProductID " + list.ProductId + "\nUserID " + list.UserId + "\nRating " + list.Rating + "\nReview " + list.Review + "\nisLike " + list.isLike);
-            }
+            /* foreach (var list in productReviewList)
+             {
+                 Console.WriteLine("\n-----------------");
+                 Console.Write("\nProductID " + list.ProductId + "\nUserID " + list.UserId + "\nRating " + list.Rating + "\nReview " + list.Review + "\nisLike " + list.isLike);
+             }*/
+
+            ProductManagement management = new ProductManagement();
+            management.TopRecords(productReviewList);
         }
     }
 }
