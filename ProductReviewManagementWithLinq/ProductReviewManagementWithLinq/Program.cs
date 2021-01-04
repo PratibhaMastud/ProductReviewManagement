@@ -38,8 +38,9 @@ namespace ProductReviewManagementWithLinq
 
             ProductManagement management = new ProductManagement();
             //management.TopRecords(productReviewList);
-           // management.RetriveRecordsOnSpecificCon(productReviewList);
-            management.CountOfRecordsByProductID(productReviewList);
+            // management.RetriveRecordsOnSpecificCon(productReviewList);
+            //management.CountOfRecordsByProductID(productReviewList);
+            management.RetrieveProductIDAndReview(productReviewList);
         }
     }
 }
