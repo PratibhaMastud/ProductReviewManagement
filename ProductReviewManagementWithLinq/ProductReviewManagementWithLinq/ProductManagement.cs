@@ -34,5 +34,19 @@ namespace ProductReviewManagementWithLinq
                               select productReviews).ToList();
             DisplayRecords(recordData);
         }
+        /// <summary>
+        /// Retrive Count of ProductID Records
+        /// </summary>
+        /// <param name="listProductReview"></param>
+        public void CountOfRecordsByProductID(List<ProductReview> listProductReview)
+        {
+            var recordData = listProductReview.GroupBy(x => x.ProductId).Select(x => new { ProductId = x.Key, Count = x.Count() });
+            
+            foreach (var list in recordData)
+            {
+                Console.WriteLine(list.ProductId + " = " + list.Count);
+            }
+        }
+
     }
 }
