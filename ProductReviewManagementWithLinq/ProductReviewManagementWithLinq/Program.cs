@@ -45,7 +45,7 @@ namespace ProductReviewManagementWithLinq
             // management.skippedTopFiveRecords(productReviewList);
 
             ProductReviewDataTable productReviewDataTable = new ProductReviewDataTable();
-            DataTable data = productReviewDataTable.CreateDataTableAddDefaultValues();
+            DataTable dataTable = productReviewDataTable.CreateDataTableAddDefaultValues();
             /*
                         Retrive All records
                         foreach (DataRow row in data.Rows)
@@ -64,7 +64,7 @@ namespace ProductReviewManagementWithLinq
                 Console.WriteLine(row.Field<int>(0), row.Field<int>(1), row.Field<int>(2), row.Field<string>(3), row.Field<bool>(4));
             }*/
 
-            foreach (DataRow row in data.Rows)
+            /*foreach (DataRow row in data.Rows)
             {
                 foreach (var item in row.ItemArray)
                 {
@@ -75,7 +75,9 @@ namespace ProductReviewManagementWithLinq
                     }
                 }
                 Console.Write("\n ");
-            }
+            }*/
+           management.retriveRecordsWhohaveLikeValueTrue(dataTable);
+            management.calAverageRatingOfEachProductID(dataTable);
         }
     }
 }

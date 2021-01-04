@@ -64,5 +64,39 @@ namespace ProductReviewManagementWithLinq
                               select productReviews).Skip(5).ToList();
             DisplayRecords(recordData);
         }
+
+        public void retriveRecordsWhohaveLikeValueTrue(DataTable table)
+        {
+            {
+                var records = table.Rows.Cast<DataRow>().Where(x => x["isLike"].Equals(true));
+
+                foreach (var row in records)
+                {
+                    //  Console.Write("\nProductID : " + row.Field<int>("ProductID") + " " + "\nUserID : " + row.Field<int>("UserID") + " " + "\nRating : " + row.Field<float>("Rating") + " " + "\nReview : " + row.Field<string>("Review") + " " + "\nisLike : " + row.Field<bool>("isLike") + " "); Console.Write("\nProductID : " + row.Field<int>("ProductID") + " " + "\nUserID : " + row.Field<int>("UserID") + " " + "\nRating : " + row.Field<float>("Rating") + " " + "\nReview : " + row.Field<string>("Review") + " " + "\nisLike : " + row.Field<bool>("isLike") + " ");
+                    foreach (var item in row.ItemArray)
+                    {
+                           Console.Write(" " + item);
+                    }
+                    Console.WriteLine("\n");
+                }
+            }
+        }
+
+        public void calAverageRatingOfEachProductID(DataTable table)
+        {
+            var records = table.Rows.Cast<DataRow>()
+                          .GroupBy(x => x.Field<int>("ProductId"))
+                          .Select(x => new
+                          {
+                              ProductId = x.Key,
+                              avrageRating = x.Average(x => x.Field<int>("Rating"))
+                          }).ToList();
+
+            foreach (var row in records)
+            {
+                Console.Write("ProductID : " + row.ProductId + " " + "Average Rating is : " + row.avrageRating);
+                Console.WriteLine("\n");
+            }
+        }
     }
 }
